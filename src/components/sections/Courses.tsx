@@ -9,7 +9,7 @@ export default function Courses() {
         <SectionHeading
           eyebrow="Our Courses"
           title="Two courses. One goal — confident communication."
-          subtitle="Both courses are live online, practical, and limited to a maximum of 10 students per batch. Choose the one that matches your goal."
+          subtitle="Both are live online. Both are limited to 10 students. Both start with a free demo. Choose the one that matches your goal."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -128,25 +128,19 @@ export default function Courses() {
                   {/* Spacer */}
                   <div className="flex-1" />
 
-                  {/* Fee + batch info */}
-                  <div className="border-t border-slate-100 pt-4 flex items-end justify-between gap-4">
+                  {/* Batch info footer */}
+                  <div className="border-t border-slate-100 pt-4 flex items-center justify-between gap-4">
                     <div>
-                      <div
-                        className="text-3xl font-bold"
-                        style={{ fontFamily: "var(--font-display)", color: primary }}
-                      >
-                        {course.fee}
+                      <div className="text-slate-700 text-sm font-semibold">
+                        {course.batchSize} &nbsp;·&nbsp; {course.format}
                       </div>
-                      <div className="text-slate-500 text-xs mt-0.5">
-                        {course.batchSize} · {course.format}
-                      </div>
-                      <div className="text-slate-400 text-xs mt-1 italic">
+                      <div className="text-slate-400 text-xs mt-0.5">
                         {course.batchNote}
                       </div>
                     </div>
                     <a
                       href="#demo"
-                      className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 ${btnClass}`}
+                      className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 flex-shrink-0 ${btnClass}`}
                       id={`course-demo-btn-${course.id}`}
                       aria-label={`Register for a free demo — ${course.name}`}
                     >

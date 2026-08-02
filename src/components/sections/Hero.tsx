@@ -78,7 +78,7 @@ export default function Hero() {
                 ))}
               </div>
               <span className="text-blue-200 text-sm font-medium">
-                Trusted by 200+ students · Established offline institute
+                200+ five-star Google reviews &nbsp;·&nbsp; Established since 2009
               </span>
             </div>
 

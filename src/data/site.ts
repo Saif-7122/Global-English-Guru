@@ -50,27 +50,27 @@ export const TRUST_ITEMS = [
 export const PROBLEMS = [
   {
     problem: "You understand English but freeze when you speak",
-    solution: "Speak confidently in everyday conversations",
+    solution: "Speak with noticeably more confidence in everyday conversations",
   },
   {
     problem: "You blank out during interviews",
-    solution: "Answer interview questions clearly and calmly",
+    solution: "Answer interview questions clearly, calmly, and in complete sentences",
   },
   {
     problem: "Fear of public speaking holds you back",
-    solution: "Deliver presentations and speak in groups with confidence",
+    solution: "Participate in group discussions and presentations without shutting down",
   },
   {
     problem: "You struggle to organise your thoughts while speaking",
-    solution: "Speak continuously on a topic without losing your thread",
+    solution: "Speak continuously on a topic for 1–2 minutes without losing your thread",
   },
   {
     problem: "You never get individual feedback in large classes",
-    solution: "Receive personal weekly feedback from your coach",
+    solution: "Receive specific, written feedback from your coach after every session",
   },
   {
     problem: "Theory-heavy classes bore you — you never actually speak",
-    solution: "Practise actively in every session — speaking is the lesson",
+    solution: "Practise speaking in every single class — speaking is the lesson",
   },
 ];
 

@@ -65,8 +65,8 @@ export default function Institute() {
               <li className="flex items-start gap-3">
                 <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-white text-xs mt-0.5" style={{ background: "var(--color-primary)" }} aria-hidden="true">✓</span>
                 <div>
-                  <span className="font-semibold text-slate-900 block mb-1">Dedicated Support</span>
-                  <span className="text-sm text-slate-500">Full-time staff dedicated to your learning experience.</span>
+                  <span className="font-semibold text-slate-900 block mb-1">Real Coaches, Real Accessibility</span>
+                  <span className="text-sm text-slate-500">Your coaches are reachable on WhatsApp. Questions about class or progress are answered directly — not by a support bot.</span>
                 </div>
               </li>
             </ul>
