@@ -61,6 +61,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: SITE.url,
+  },
 };
 
 /* ── Structured Data (Organisation) ─────────────────────── */

@@ -148,6 +148,31 @@ export default function Courses() {
                     </a>
                   </div>
                 </div>
+
+                {/* Structured Data for SEO */}
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Course",
+                      name: course.name,
+                      description: course.audience,
+                      provider: {
+                        "@type": "EducationalOrganization",
+                        name: "Global English Guru",
+                        sameAs: "https://www.globalenglishguru.com",
+                      },
+                      courseMode: "online",
+                      offers: {
+                        "@type": "Offer",
+                        category: "Paid",
+                        priceCurrency: "INR",
+                        price: course.fee.replace(/[^0-9]/g, ""),
+                      },
+                    }),
+                  }}
+                />
               </article>
             );
           })}

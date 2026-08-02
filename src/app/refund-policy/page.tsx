@@ -18,9 +18,9 @@ export default function RefundPolicy() {
             centered={false}
           />
           <div className="max-w-3xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-100 prose prose-slate">
-            <p className="text-sm text-slate-500 mb-8 italic">
-              [PLACEHOLDER] A formal refund policy must be drafted by the institute. This is a temporary placeholder.
-            </p>
+            <div className="bg-amber-50 border border-amber-200 text-amber-800 px-4 py-3 rounded-lg mb-8 text-sm font-medium">
+              Note: This is a placeholder policy document. Final legal terms will be updated shortly by legal counsel.
+            </div>
             
             <h3 className="text-xl font-bold text-slate-900 mb-4">1. Cancellations</h3>
             <p className="text-slate-600 mb-6 leading-relaxed">
