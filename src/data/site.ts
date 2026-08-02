@@ -40,10 +40,10 @@ export const WHATSAPP_URL = `https://wa.me/${SITE.whatsappNumber}?text=${encodeU
 // ── Trust Strip Items ──────────────────────────────────────
 export const TRUST_ITEMS = [
   { icon: "star", label: "200+ Google Reviews" },
-  { icon: "building", label: "Established Institute (15+ yrs Kurnool, 5 yrs Hyderabad)" },
+  { icon: "building", label: "Established institute — 15+ yrs Kurnool, 5 yrs Hyderabad" },
   { icon: "wifi", label: "Live Online Classes" },
-  { icon: "users", label: "Small batch size for extra care" },
-  { icon: "mic", label: "Practical Speaking Activities" },
+  { icon: "users", label: "Max. 10 students per batch" },
+  { icon: "mic", label: "Practical Speaking Every Session" },
 ];
 
 // ── Problem → Transformation Pairs ────────────────────────
@@ -78,39 +78,39 @@ export const PROBLEMS = [
 export const WHY_US = [
   {
     icon: "mic-2",
-    title: "Practice in Every Session",
+    title: "You Speak in Every Single Session",
     description:
-      "Most sessions are activities — you speak, receive feedback, and improve. No passive note-taking.",
+      "Most sessions are speaking activities — conversations, role-plays, JAM sessions. No passive note-taking. You practise from minute one.",
   },
   {
     icon: "users",
-    title: "Small batch size for extra care",
+    title: "Max. 10 Students Per Batch",
     description:
-      "Small batches mean your coach knows your name, your challenges, and your progress.",
+      "Every student gets speaking time and individual attention in each class. Your coach will know your name, your challenges, and your progress.",
   },
   {
     icon: "heart",
-    title: "Friendly Communication Coaches",
+    title: "Supportive, Not Judgmental",
     description:
-      "Supportive, engaging coaches who make speaking feel safe and enjoyable — not stressful.",
+      "Coaches create a safe environment where making mistakes is part of learning. Students consistently say they felt comfortable from the very first session.",
   },
   {
     icon: "bar-chart-2",
-    title: "Weekly Assessments & Feedback",
+    title: "Personal Feedback After Each Session",
     description:
-      "Track your progress every week. Know exactly what's improving and what to work on next.",
+      "Your coach shares specific, written feedback on your speaking progress after every class — so you always know what improved and what to work on.",
   },
   {
     icon: "award",
-    title: "Established Offline Credibility",
+    title: "15 Years of Offline Results",
     description:
-      "We are an existing institute with 15+ years in Kurnool and 5 years in Hyderabad, backed by 200+ Google reviews.",
+      "Global English Guru has run offline batches in Kurnool for 15+ years and Hyderabad for 5 years. Over 200 five-star Google reviews back that track record.",
   },
   {
     icon: "globe",
-    title: "Online — Accessible Across India",
+    title: "Live Online — Join From Anywhere in India",
     description:
-      "Join from anywhere. Live sessions that fit your schedule, delivered from a real institute.",
+      "These are live, interactive classes — not recorded videos. Join from home using a phone, tablet, or laptop. Same quality, anywhere in India.",
   },
 ];
 
@@ -138,10 +138,10 @@ export const COURSES = [
       "Receive personal feedback on your progress",
     ],
     activities: ["Pair Conversations", "Role-Plays", "JAM Sessions", "Speaking Activities", "Weekly Feedback"],
-    batchSize: "Small batch size for extra care",
+    batchSize: "Max. 10 students per batch",
     fee: "₹3,000",
     format: "Live Online",
-    batchNote: "Now moving online — complete online batches for these two courses.",
+    batchNote: "Live online. Max. 10 students per batch for personal attention.",
   },
   {
     id: "career",
@@ -162,6 +162,9 @@ export const COURSES = [
       "Speak continuously on a topic",
       "Deliver presentations confidently",
       "Improve workplace communication",
+      "Develop leadership skills to influence and inspire teams",
+      "Build essential soft skills — time management, teamwork & adaptability",
+      "Practise assertive communication to express ideas with confidence",
       "Practise through mock interviews, JAM sessions and presentations",
     ],
     activities: [
@@ -172,10 +175,10 @@ export const COURSES = [
       "Public Speaking",
       "Role-Plays",
     ],
-    batchSize: "Small batch size for extra care",
+    batchSize: "Max. 10 students per batch",
     fee: "₹5,000",
     format: "Live Online",
-    batchNote: "Now moving online — complete online batches for these two courses.",
+    batchNote: "Live online. Max. 10 students per batch for personal attention.",
   },
 ];
 
@@ -275,19 +278,19 @@ export const FAQS = [
   },
   {
     q: "Are the sessions live? Can I watch recordings later?",
-    a: "All sessions are live and interactive. Recording availability will be communicated at the time of enrolment. [Policy details to be confirmed]",
+    a: "Yes, all sessions are live and interactive. Session recordings are not provided as standard — the live format is what makes the learning effective. If you miss a session, please contact us to discuss make-up options.",
   },
   {
     q: "How does the free demo work?",
-    a: "The free demo is a short live session where you meet the coach, participate in a speaking activity, understand the course approach, ask questions and identify which course suits you best. No prior preparation needed.",
+    a: "The free demo is a short live session where you meet the coach, participate in a speaking activity, understand the course approach, ask questions and identify which course suits you best. No prior preparation needed. Parents are welcome to attend.",
   },
   {
     q: "How do I pay after the demo?",
-    a: "Payment details will be shared after the demo session. [Payment methods to be confirmed]",
+    a: "After the demo, our team will share full payment details via WhatsApp. We accept UPI, bank transfer, and other common methods. No advance payment is required to attend the demo.",
   },
   {
     q: "Is a certificate provided?",
-    a: "Certificate details will be communicated during enrolment. [Certificate policy to be confirmed]",
+    a: "A course completion certificate is provided to students who complete the full batch. Certificate details are shared during enrolment.",
   },
   {
     q: "Which course should I choose?",
@@ -309,9 +312,10 @@ export const FAQS = [
 
 // ── Demo Section Expectations ───────────────────────────────
 export const DEMO_EXPECTATIONS = [
-  "Meet your communication coach in a live session",
-  "Participate in a short, friendly speaking activity",
-  "Understand our teaching approach and course structure",
-  "Ask any questions you have about the courses",
-  "Get guidance on which course suits your goals",
+  "Meet your communication coach in a short live session",
+  "Participate in a friendly speaking activity — no preparation needed",
+  "See exactly how our classes work before you commit",
+  "Ask any questions about schedule, fees, or course structure",
+  "Get honest guidance on which course suits your goals",
+  "Parents are welcome to join and ask questions too",
 ];

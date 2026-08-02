@@ -53,8 +53,8 @@ export default function WhyUs() {
       <div className="container-xl">
         <SectionHeading
           eyebrow="Why Global English Guru"
-          title="A communication training experience unlike any other"
-          subtitle="We are not another grammar class or spoken-English workshop. We are a practical communication lab with a proven track record — online and offline."
+          title="Six reasons students choose us over other spoken English classes"
+          subtitle="We are a practical communication lab — not another grammar class or workshop. Every point below is backed by 15+ years of offline teaching and 200+ five-star Google reviews."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

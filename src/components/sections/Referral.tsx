@@ -20,11 +20,11 @@ export default function Referral() {
               Love our classes? Bring a friend.
             </h2>
             <p className="text-slate-700 text-base md:text-lg mb-8 max-w-2xl mx-auto">
-              Refer a friend to Global English Guru and receive{" "}
+              Refer a friend to Global English Guru and you receive{" "}
               <span className="font-bold text-slate-900 bg-amber-200 px-2 py-0.5 rounded">
-                receive 500 off
+                ₹500 off your next batch fee
               </span>{" "}
-              when they join a batch. Learning is always better together.
+              when they enrol. Learning is better when a friend joins with you.
             </p>
 
             <a

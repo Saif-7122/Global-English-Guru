@@ -35,9 +35,18 @@ export default function Courses() {
                   className="px-6 pt-6 pb-4 border-b"
                   style={{ borderColor: primaryBg }}
                 >
-                  <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-3 ${badgeBg}`}>
-                    {course.badge}
-                  </span>
+                  {/* Fee — prominent at top */}
+                  <div className="flex items-center justify-between mb-3">
+                    <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${badgeBg}`}>
+                      {course.badge}
+                    </span>
+                    <span
+                      className="text-xl font-bold"
+                      style={{ fontFamily: "var(--font-display)", color: primary }}
+                    >
+                      {course.fee}
+                    </span>
+                  </div>
                   <h3
                     id={`course-name-${course.id}`}
                     className="text-xl sm:text-2xl font-bold text-slate-900 mb-2"
@@ -152,8 +161,11 @@ export default function Courses() {
 
         {/* Can't decide */}
         <div className="mt-10 text-center">
-          <p className="text-slate-500 text-sm mb-4">
-            Not sure which course suits you? Attend the free demo — your coach will help you decide.
+          <p className="text-slate-500 text-sm mb-1">
+            Not sure which course suits you?
+          </p>
+          <p className="text-slate-400 text-xs mb-4">
+            Both courses start with the same free demo. Your coach will tell you exactly which one fits your goals.
           </p>
           <DemoButton size="md" id="courses-demo-btn" />
         </div>

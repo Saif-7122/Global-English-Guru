@@ -58,6 +58,7 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    animation-play-state: paused !important;
   }
 }
 
@@ -102,8 +103,14 @@ h1, h2, h3, h4, h5, h6 {
    Utility: Section Padding
 ───────────────────────────────────────────── */
 .section-pad {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+@media (min-width: 640px) {
+  .section-pad {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 @media (min-width: 768px) {
   .section-pad {
@@ -233,16 +240,34 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 50;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   background: #25d366;
   color: #fff;
   border-radius: 9999px;
-  padding: 0.75rem 1.25rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0;
   box-shadow: 0 4px 16px rgba(37,211,102,0.35);
-  font-weight: 600;
-  font-size: 0.9375rem;
-  text-decoration: none;
   transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float span {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .whatsapp-float {
+    width: auto;
+    height: auto;
+    padding: 0.75rem 1.25rem;
+  }
+  .whatsapp-float span {
+    display: inline;
+    font-weight: 600;
+    font-size: 0.9375rem;
+  }
 }
 
 .whatsapp-float:hover {

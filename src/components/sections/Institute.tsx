@@ -7,9 +7,9 @@ export default function Institute() {
     <section id="institute" className="section-pad bg-white">
       <div className="container-xl">
         <SectionHeading
-          eyebrow="Established Offline"
-          title="Not just a website. A real institute."
-          subtitle="Global English Guru has been transforming careers offline long before we launched online. You are joining a credible, trusted institution."
+          eyebrow="Established Since 2009"
+          title="15 years of results. Now available online."
+          subtitle="Global English Guru has been training students in Kurnool and Hyderabad since 2009. You are joining a credible, trusted institution — not a new online experiment."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
@@ -37,18 +37,15 @@ export default function Institute() {
 
           {/* Right — Info */}
           <div>
-            <h3
-              className="text-2xl font-bold text-slate-900 mb-4"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Why our physical presence matters to you
-            </h3>
-            <p className="text-slate-600 leading-relaxed mb-6">
-              When you join an online course from an established physical
-              institute, you get the best of both worlds. The convenience of
-              learning from home, backed by the credibility, accountability and
-              structured curriculum of a real-world academy.
-            </p>
+            <div className="text-slate-900 text-center md:text-left mb-6">
+              <div className="text-2xl font-bold mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                A real institute. A real track record.
+              </div>
+              <p className="text-slate-600 text-base max-w-lg">
+                15+ years in Kurnool. 5 years in Hyderabad. 200+ five-star Google reviews.
+                The same coaching quality is now available online, for students across India.
+              </p>
+            </div>
 
             <ul className="flex flex-col gap-4 mb-8">
               <li className="flex items-start gap-3">
