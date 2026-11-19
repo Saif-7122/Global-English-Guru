@@ -568,3 +568,69 @@
   .wordmark img { flex-basis: 34px; width: 34px; height: 34px; }
   .navButton { padding-inline: 0.73rem; }
 }
+
+/* A print-inspired cover, with a photographic plate and a live voice trace. */
+.site { --blue:#143dbb; --ink:#111825; --line:#cbd0d8; --display:Georgia,"Times New Roman",serif; }
+.header { background:white; color:var(--ink); border-color:var(--line); }
+.header .wordmark > span > span, .headerNav a:hover { color:var(--blue); }
+.headerNav { color:#384256; }
+.header .navButton { background:var(--ink); color:white; }
+.header .navButton:hover { background:var(--blue); }
+.button { border-radius:0; }
+.hero { color:var(--ink); background:white; }
+.heroLayout { grid-template-columns:1.03fr 1fr; gap:clamp(2rem,6vw,6rem); padding-block:clamp(2.4rem,5vw,5.2rem); }
+.heroCopy { padding:0; }
+.heroKicker,.overline,.courseLabel,.plateCaption span { font:600 .72rem/1.45 ui-monospace,Consolas,monospace; letter-spacing:.13em; text-transform:uppercase; }
+.heroKicker { color:var(--blue); margin-bottom:1.6rem; }
+.heroKicker span { border-radius:0; background:#279552; box-shadow:none; }
+.site .hero h1 { color:var(--ink); font:normal clamp(4.9rem,7.45vw,7.4rem)/.86 var(--display); letter-spacing:-.078em; }
+.hero h1 em { color:var(--blue); font-style:italic; white-space:nowrap; }
+.heroDescription { color:#414b59; max-width:42ch; line-height:1.55; }
+.heroActions { align-items:center; gap:1.3rem; }
+.heroActions .ghost { min-height:2.7rem; padding-inline:0; background:none; border:0; border-bottom:1px solid currentColor; color:var(--ink); }
+.heroActions .acid::after,.finalCall .button::after { content:"↗"; margin-left:.35rem; }
+.voiceStage { overflow:hidden; align-self:stretch; height:auto; min-height:24rem; background:#1641b4; border:0; }
+.voiceStage::before { inset:0; z-index:1; pointer-events:none; background:linear-gradient(0deg,#081937 1%,#0c277355 28%,transparent 52%); }
+.coverPortrait { object-fit:cover; object-position:50% 34%; filter:grayscale(1) contrast(1.1); mix-blend-mode:luminosity; }
+.voiceCanvas { inset:auto 0 2.5rem; height:28%; z-index:2; }
+.plateCaption { position:absolute; z-index:3; left:1.4rem; bottom:1.1rem; color:white; display:grid; gap:.3rem; }
+.plateCaption strong { font:italic 1.55rem/1 var(--display); }
+.plateCaption span { font-size:.58rem; }
+.voiceControls { z-index:3; bottom:1rem; right:1rem; }
+.voiceControls button { background:#101e38; border:1px solid #8996b1; border-radius:0; min-height:2.3rem; }
+.benefits { border-block:1px solid var(--line); color:var(--ink); }
+.benefits p + p { border-color:var(--line); }
+.benefits svg { color:var(--blue); }
+.site :is(.sectionIntro,.masterclassCopy,.trainerCopy,.finalCall) h2,.site .subpageTitle h1 { font:normal clamp(2.65rem,5.1vw,5rem)/.98 var(--display); letter-spacing:-.056em; }
+.masterclass { background:#132d85; }
+.masterclassCopy > p:not(.overline) { max-width:41ch; }
+.masterclass .acid,.finalCall .acid { color:var(--ink); background:white; }
+.promptPanel { background:none; border:0; border-radius:0; padding:0; }
+.promptPanel h3 { padding-bottom:.75rem; }
+.prompt summary { min-height:4rem; }
+.courseCard { border:0; border-top:3px solid var(--blue); border-radius:0; background:#f4f6fa; }
+.courseCard[data-course="career"] { border-color:var(--ink); }
+.courseCard .courseArt,.courseCard[data-course="career"] .courseArt { min-height:0; background:none; border:0; color:var(--ink); }
+.courseArt::before { content:none; }
+.courseLabel { padding:0; border:0; margin:1.8rem 2rem 0; }
+.courseBody { padding:1rem 2rem 2rem; }
+.courseBody h3 { font:normal clamp(2rem,3.45vw,3.5rem)/1.03 var(--display); }
+.courseGrid { gap:clamp(1rem,3vw,3rem); }
+.videoCard,.trainerPhoto,.trainerArchive img { border-radius:0; }
+.videoGrid { gap:.6rem; }
+.section:has(.videoGrid) { border-top:1px solid var(--line); }
+.trainerSection { background:#f2f4f8; }
+.review { border:0; border-top:1px solid var(--ink); border-radius:0; padding:1.5rem 0; }
+.review blockquote { font:normal 1.45rem/1.3 var(--display); }
+.reviewGrid { gap:2.2rem; }
+.finalCall { background:var(--blue); }
+.footerTop { padding-block:4rem; }
+@media(max-width:720px) {
+  .heroLayout { grid-template-columns:1fr; gap:2rem; }
+  .site .hero h1 { font-size:clamp(4.25rem,12.8vw,6.5rem); }
+  .heroActions a { width:auto; }
+  .heroActions { gap:.55rem 1.1rem; }
+  .voiceStage { margin:0; min-height:0; height:clamp(20rem,89vw,34rem); }
+  .courseBody { padding:1rem 1.25rem 1.5rem; }
+  .courseLabel { margin:1.4rem 1.25rem 0; }
+}

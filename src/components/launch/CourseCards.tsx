@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AudioLines, BriefcaseBusiness, Check, Plus } from "lucide-react";
+import { Check, Plus } from "lucide-react";
 import { COURSES } from "@/data/site";
 import { getInterest, registerHref } from "@/data/launch";
 import styles from "./launch.module.css";
@@ -8,13 +8,10 @@ export default function CourseCards() {
   return (
     <div className={styles.courseGrid}>
       {COURSES.map((course) => {
-        const everyday = course.id === "everyday";
-        const Icon = everyday ? AudioLines : BriefcaseBusiness;
         return (
           <article key={course.id} className={styles.courseCard} data-course={course.id}>
             <div className={styles.courseArt}>
               <span className={styles.courseLabel}>{course.badge}</span>
-              <Icon className={styles.courseObject} size={70} strokeWidth={1.05} aria-hidden="true" />
             </div>
             <div className={styles.courseBody}>
               <p className={styles.courseFormat}>{course.format} <span aria-hidden="true">·</span> Up to 10 per batch</p>

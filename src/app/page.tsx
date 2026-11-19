@@ -46,9 +46,9 @@ export default function HomePage() {
       <section className={styles.hero} aria-labelledby="hero-title">
         <div className={`${styles.wrap} ${styles.heroLayout}`}>
           <div className={styles.heroCopy}>
-            <p className={styles.heroKicker}><span /> Live online English coaching</p>
-            <h1 id="hero-title">You know English.<br /><em>Now speak it.</em></h1>
-            <p className={styles.heroDescription}>Practise speaking with Sajid Ahmed. Join the masterclass or choose a live online course for everyday conversations, interviews, and work.</p>
+            <p className={styles.heroKicker}><span /> Live online masterclass</p>
+            <h1 id="hero-title">You know<br />English.<br /><em>Now speak it.</em></h1>
+            <p className={styles.heroDescription}>Join Sajid Ahmed for a live spoken English masterclass. Practise finding your words in conversations, at work, and in interviews.</p>
             <div className={styles.heroActions}>
               <Link href={registerHref()} className={`${styles.button} ${styles.acid}`}>Register for the masterclass</Link>
               <Link href="#courses" className={`${styles.button} ${styles.ghost}`}>Explore online courses</Link>
@@ -65,20 +65,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="courses" className={`${styles.wrap} ${styles.section}`}>
-        <div className={styles.sectionIntro}>
-          <p className={styles.overline}>Live online courses</p>
-          <h2>Choose what you want to get better at.</h2>
-          <p>Both courses give you time to speak. Pick the one that matches the conversations you want to have.</p>
-        </div>
-        <CourseCards />
-      </section>
-
       <section id="masterclass" className={styles.masterclass}>
         <div className={`${styles.wrap} ${styles.masterclassGrid}`}>
           <div className={styles.masterclassCopy}>
             <p className={styles.overline}>Spoken English masterclass</p>
-            <h2>See how a speaking class works.</h2>
+            <h2>Inside the masterclass.</h2>
             <p>Work through practical examples with Sajid Ahmed. Try introducing yourself, keeping a conversation moving, and answering an interview question clearly.</p>
             {details.length > 0 && (
               <ul className={styles.schedule} aria-label="Masterclass details">
@@ -97,6 +88,15 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section id="courses" className={`${styles.wrap} ${styles.section}`}>
+        <div className={styles.sectionIntro}>
+          <p className={styles.overline}>Live online courses</p>
+          <h2>Two ways to keep speaking.</h2>
+          <p>Both courses give you time to speak. Pick the one that matches the conversations you want to have.</p>
+        </div>
+        <CourseCards />
       </section>
 
       <section id="videos" className={`${styles.wrap} ${styles.section}`}>
@@ -134,7 +134,7 @@ export default function HomePage() {
       <section id="reviews" className={`${styles.wrap} ${styles.section}`}>
         <div className={styles.sectionIntro}>
           <p className={styles.overline}>Google reviews</p>
-          <h2>What learners say about the classes.</h2>
+          <h2>In their own words.</h2>
         </div>
         <div className={styles.reviewGrid}>
           {REVIEWS.map(({ name, quote }) => (

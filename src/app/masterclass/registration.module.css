@@ -108,3 +108,15 @@
   background: #fff1f0;
   color: #171d28;
 }
+
+.page { background:#f3f5f8; padding-block:clamp(2.5rem,7vw,6rem); }
+.panel { width:min(100%,65rem); border:0; border-top:3px solid var(--blue); border-radius:0; box-shadow:none; padding:clamp(1.4rem,5vw,4rem); }
+.panel h1 { font:normal clamp(2.8rem,5vw,4.9rem)/.99 Georgia,serif; letter-spacing:-.065em; }
+.kicker { font:600 .73rem/1.5 ui-monospace,Consolas,monospace; letter-spacing:.1em; text-transform:uppercase; }
+.back { font-size:.85rem; }
+.field input { border-radius:0; min-height:3.1rem; }
+@media(min-width:780px) {
+  .panel:has(.form) { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto auto 1fr; column-gap:clamp(2rem,5vw,5rem); align-items:start; }
+  .panel:has(.form) > :not(.form) { grid-column:1; }
+  .panel .form { grid-column:2; grid-row:1 / 5; margin:0; }
+}

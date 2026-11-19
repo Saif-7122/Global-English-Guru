@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { TRAINERS } from "@/data/site";
 import { AudioLines } from "lucide-react";
 import { mountPixelField } from "./pixel-field";
 import styles from "./launch.module.css";
@@ -22,12 +24,13 @@ export default function VoiceStage() {
 
   return (
     <div className={styles.voiceStage} ref={surface} data-pixel-stage>
-      <div className={styles.voiceGrid} aria-hidden="true" />
+      <Image className={styles.coverPortrait} src={TRAINERS[0].photo} alt="Sajid Ahmed addressing a seminar" fill priority sizes="(max-width: 720px) 94vw, 42vw" />
+      <div className={styles.plateCaption}><strong>Sajid Ahmed</strong><span>Founder &amp; lead trainer</span></div>
       <canvas ref={canvas} className={styles.voiceCanvas} data-pixel-field aria-hidden="true" />
-      <div className={styles.pixelFallback} aria-hidden="true">SPEAK<br />UP</div>
+      
       <div className={styles.voiceControls}>
         <button type="button" data-pulse-pixels onClick={() => field.current?.pulse()}>
-          <AudioLines size={16} aria-hidden="true" /> Pulse pixels
+          <AudioLines size={16} aria-hidden="true" /> Pulse waveform
         </button>
       </div>
     </div>
