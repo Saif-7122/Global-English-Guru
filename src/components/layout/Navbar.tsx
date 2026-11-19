@@ -6,13 +6,13 @@ import { SITE } from "@/data/site";
 import { DemoButton } from "@/components/ui/Button";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Courses", href: "#courses" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Trainers", href: "#trainers" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Masterclass", href: "/" },
+  { label: "Why Us", href: "/courses#why-us" },
+  { label: "Courses", href: "/courses#courses" },
+  { label: "How It Works", href: "/courses#how-it-works" },
+  { label: "Trainers", href: "/courses#trainers" },
+  { label: "Reviews", href: "/courses#reviews" },
+  { label: "FAQ", href: "/courses#faq" },
 ];
 
 export default function Navbar() {
@@ -41,7 +41,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-14 sm:h-16 lg:h-18">
             {/* Logo / Brand */}
             <a
-              href="#home"
+              href="/"
               className="flex items-center gap-2 text-white no-underline min-w-0"
               aria-label="Global English Guru — Home"
             >

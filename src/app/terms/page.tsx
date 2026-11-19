@@ -1,6 +1,4 @@
 import { SITE } from "@/data/site";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata = {
@@ -10,8 +8,7 @@ export const metadata = {
 export default function Terms() {
   return (
     <>
-      <Navbar />
-      <main className="pt-24 pb-16 min-h-screen bg-slate-50">
+      <main id="site-content" className="py-16 min-h-screen bg-slate-50">
         <div className="container-xl">
           <SectionHeading
             title="Terms and Conditions"
@@ -40,7 +37,6 @@ export default function Terms() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

@@ -52,13 +52,13 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-2">
               {[
-                ["Home", "#home"],
-                ["Why Us", "#why-us"],
-                ["Courses", "#courses"],
-                ["How It Works", "#how-it-works"],
-                ["Trainers", "#trainers"],
-                ["Reviews", "#reviews"],
-                ["FAQ", "#faq"],
+                ["Masterclass", "/"],
+                ["Why Us", "/courses#why-us"],
+                ["Courses", "/courses#courses"],
+                ["How It Works", "/courses#how-it-works"],
+                ["Trainers", "/courses#trainers"],
+                ["Reviews", "/courses#reviews"],
+                ["FAQ", "/courses#faq"],
                 ["Free Demo", SITE.googleFormUrl],
               ].map(([label, href]) => (
                 <li key={href}>

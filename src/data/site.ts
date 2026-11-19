@@ -8,7 +8,7 @@ export const SITE = {
   tagline: "Confidence. Communication. Careers.",
   shortDescription:
     "Live online communication courses for students and professionals — small batches, personal feedback, practical activities.",
-  url: "https://www.globalenglishguru.com", // [PLACEHOLDER: update to real domain]
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.globalenglishguru.com").replace(/\/+$/, ""),
 
   // ── Contact ────────────────────────────────────────────────
   phone: "+91 7660981213, +91 9347047827", 
@@ -17,7 +17,7 @@ export const SITE = {
   whatsappMessage:
     "Hello Global English Guru, I would like to know more about the free demo and upcoming online batches.",
   address: "234, 2nd Floor, Jagadeesh Mall, Shilpa Birla Compound Rd, beside Wallmart, Krishna Reddy Nagar, B Camp, Kurnool, Andhra Pradesh 518002",
-  googleMapsUrl: "https://maps.google.com",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Global+English+Guru+Kurnool",
 
   // ── Social ─────────────────────────────────────────────────
   instagram: "https://instagram.com/globalenglishguru", // [PLACEHOLDER]
@@ -31,7 +31,7 @@ export const SITE = {
     "Global English Guru — Online Communication & English Speaking Classes",
   metaDescription:
     "Practical live online communication courses for students and professionals. Small batches of 10, personal feedback, mock interviews, JAM sessions. Register for a free demo today.",
-  ogImage: "/og-image.png", // [PLACEHOLDER — create 1200×630 OG image]
+  ogImage: "/assets/founder(Sajid Ahmed).webp",
 };
 
 // ── WhatsApp click-to-chat URL ─────────────────────────────

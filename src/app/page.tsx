@@ -1,68 +1,173 @@
-import Navbar from "@/components/layout/Navbar";
-import Hero from "@/components/sections/Hero";
-import TrustStrip from "@/components/sections/TrustStrip";
-import ProblemTransformation from "@/components/sections/ProblemTransformation";
-import WhyUs from "@/components/sections/WhyUs";
-import Courses from "@/components/sections/Courses";
-import LearningExperience from "@/components/sections/LearningExperience";
-import VisibleProgress from "@/components/sections/VisibleProgress";
-import Trainers from "@/components/sections/Trainers";
-import Institute from "@/components/sections/Institute";
-import Testimonials from "@/components/sections/Testimonials";
-import Referral from "@/components/sections/Referral";
-import DemoRegistration from "@/components/sections/DemoRegistration";
-import FAQ from "@/components/sections/FAQ";
-import Footer from "@/components/layout/Footer";
-import { WHATSAPP_URL } from "@/data/site";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { AudioLines, CalendarDays, MessageCircle, Mic, Plus, UsersRound, Video } from "lucide-react";
+import CourseCards from "@/components/launch/CourseCards";
+import VideoGallery from "@/components/launch/VideoGallery";
+import VoiceStage from "@/components/launch/VoiceStage";
+import styles from "@/components/launch/launch.module.css";
+import { INTERESTS, registerHref, REVIEWS } from "@/data/launch";
+import { SITE, TRAINERS } from "@/data/site";
 
-export default function Home() {
+const title = "Spoken English Masterclass & Live Online Courses";
+const description = "Practise spoken English with Global English Guru. Register for the masterclass or explore live online courses in everyday English and career communication.";
+const [trainer] = TRAINERS;
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/" },
+  openGraph: { title: `${title} | ${SITE.name}`, description, type: "website", url: "/", images: [trainer.photo] },
+  twitter: { card: "summary_large_image", title, description, images: [trainer.photo] },
+};
+
+const practice = [
+  { title: "Introduce yourself", description: "Say where you’re from, what you do, and one thing you’re interested in.", icon: Mic },
+  { title: "Keep a conversation going", description: "Ask a follow-up question that invites the other person to tell you more.", icon: MessageCircle },
+  { title: "Give a clear interview answer", description: "State your point first, then give one example that supports it.", icon: AudioLines },
+];
+
+const questions = [
+  { question: "Who are the courses for?", answer: "Everyday English is for learners who understand English but hesitate to speak. Career Communication is designed for final-year students, recent graduates, and working professionals." },
+  { question: "How do the online classes work?", answer: "Classes are live and interactive, with up to 10 learners in a batch. Expect speaking practice, role-plays or discussions, and feedback from your trainer." },
+  { question: "Does registering interest reserve a course seat?", answer: "The form sends an inquiry to our team. We’ll follow up about batch dates and how to enrol." },
+  { question: "What happens after I register for the masterclass?", answer: "Look for a confirmation email. The Global English Guru team can follow up with the session details and joining instructions." },
+];
+
+export default function HomePage() {
+  const details = [
+    process.env.MASTERCLASS_DATE_TIME,
+    process.env.MASTERCLASS_FORMAT,
+    process.env.MASTERCLASS_FEE,
+  ].flatMap((value) => value?.trim() || []);
+
   return (
-    <>
-      <Navbar />
-      {/*
-        pb-20 on mobile ensures the fixed WhatsApp circle (56px + 24px bottom gap)
-        never overlaps the last content in the main area.
-        On sm+ it expands to a pill which is still within the right margin.
-      */}
-      <main className="pb-20 sm:pb-0">
-        <Hero />
-        <TrustStrip />
-        <ProblemTransformation />
-        <WhyUs />
-        <Courses />
-        <LearningExperience />
-        <VisibleProgress />
-        <Trainers />
-        <Institute />
-        <Testimonials />
-        <Referral />
-        <DemoRegistration />
-        <FAQ />
-      </main>
-      <Footer />
+    <main id="site-content">
+      <section className={styles.hero} aria-labelledby="hero-title">
+        <div className={`${styles.wrap} ${styles.heroLayout}`}>
+          <div className={styles.heroCopy}>
+            <p className={styles.heroKicker}><span /> Live online English coaching</p>
+            <h1 id="hero-title">You know English.<br /><em>Now speak it.</em></h1>
+            <p className={styles.heroDescription}>Practise speaking with Sajid Ahmed. Join the masterclass or choose a live online course for everyday conversations, interviews, and work.</p>
+            <div className={styles.heroActions}>
+              <Link href={registerHref()} className={`${styles.button} ${styles.acid}`}>Register for the masterclass</Link>
+              <Link href="#courses" className={`${styles.button} ${styles.ghost}`}>Explore online courses</Link>
+            </div>
+          </div>
+          <VoiceStage />
+        </div>
+        <div className={styles.benefits}>
+          <div className={styles.wrap}>
+            <p><Video size={19} aria-hidden="true" /> Live speaking practice</p>
+            <p><UsersRound size={20} aria-hidden="true" /> Up to 10 per course batch</p>
+            <p><MessageCircle size={19} aria-hidden="true" /> Personal feedback</p>
+          </div>
+        </div>
+      </section>
 
-      {/* Floating WhatsApp button — icon-only circle on mobile, text pill on sm+ */}
-      <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-float lg:hidden"
-        aria-label="Chat on WhatsApp"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          aria-hidden="true"
-          className="flex-shrink-0"
-        >
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-        </svg>
-        {/* Hidden on mobile (<sm), shown as pill text on sm+ via CSS */}
-        <span>WhatsApp</span>
-      </a>
-    </>
+      <section id="courses" className={`${styles.wrap} ${styles.section}`}>
+        <div className={styles.sectionIntro}>
+          <p className={styles.overline}>Live online courses</p>
+          <h2>Choose what you want to get better at.</h2>
+          <p>Both courses give you time to speak. Pick the one that matches the conversations you want to have.</p>
+        </div>
+        <CourseCards />
+      </section>
+
+      <section id="masterclass" className={styles.masterclass}>
+        <div className={`${styles.wrap} ${styles.masterclassGrid}`}>
+          <div className={styles.masterclassCopy}>
+            <p className={styles.overline}>Spoken English masterclass</p>
+            <h2>See how a speaking class works.</h2>
+            <p>Work through practical examples with Sajid Ahmed. Try introducing yourself, keeping a conversation moving, and answering an interview question clearly.</p>
+            {details.length > 0 && (
+              <ul className={styles.schedule} aria-label="Masterclass details">
+                {details.map((detail, index) => <li key={index}><CalendarDays size={16} aria-hidden="true" />{detail}</li>)}
+              </ul>
+            )}
+            <Link href={registerHref()} className={`${styles.button} ${styles.acid}`}>Register for the masterclass</Link>
+          </div>
+          <div className={styles.promptPanel}>
+            <h3>Try a speaking prompt</h3>
+            {practice.map(({ title, description, icon: Icon }) => (
+              <details key={title} className={styles.prompt}>
+                <summary><span><Icon size={20} aria-hidden="true" />{title}</span><Plus size={17} aria-hidden="true" /></summary>
+                <p>{description}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="videos" className={`${styles.wrap} ${styles.section}`}>
+        <div className={styles.sectionIntro}>
+          <p className={styles.overline}>Student videos</p>
+          <h2>Hear from our learners.</h2>
+        </div>
+        <VideoGallery />
+      </section>
+
+      <section id="trainer" className={styles.trainerSection}>
+        <div className={`${styles.wrap} ${styles.trainerLayout}`}>
+          <figure className={styles.trainerPhoto}>
+            <Image src={trainer.photo} alt="Sajid Ahmed speaking at an event with a microphone" fill sizes="(max-width: 720px) 90vw, 440px" />
+            <figcaption>Founder and lead trainer</figcaption>
+          </figure>
+          <div className={styles.trainerCopy}>
+            <p className={styles.overline}>Meet your trainer</p>
+            <h2>Sajid Ahmed</h2>
+            <p>A certified soft skills and personality development trainer with 20 years of teaching experience. He founded Global English Guru in Kurnool and coaches learners in spoken English, interviews, and professional communication.</p>
+            <div className={styles.trainerArchive}>
+              <figure>
+                <Image src="/assets/students in seminar (2017).webp" alt="Learners attending a seminar in 2017" width={480} height={405} />
+                <figcaption>Student seminar, 2017</figcaption>
+              </figure>
+              <figure>
+                <Image src="/assets/awarded as the best soft skills trainer in the divison.webp" alt="Sajid Ahmed receiving a soft skills training award" width={585} height={473} />
+                <figcaption>Soft skills trainer award</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" className={`${styles.wrap} ${styles.section}`}>
+        <div className={styles.sectionIntro}>
+          <p className={styles.overline}>Google reviews</p>
+          <h2>What learners say about the classes.</h2>
+        </div>
+        <div className={styles.reviewGrid}>
+          {REVIEWS.map(({ name, quote }) => (
+            <figure className={styles.review} key={name}>
+              <span aria-label="5 out of 5 stars" role="img">★★★★★</span>
+              <blockquote>“{quote}”</blockquote>
+              <figcaption>{name}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <a className={styles.textLink} href="https://www.google.com/search?q=Global+English+Guru+Kurnool">Find Global English Guru on Google</a>
+      </section>
+
+      <section id="faq" className={styles.faq}>
+        <div className={`${styles.wrap} ${styles.faqLayout}`}>
+          <div className={styles.sectionIntro}><p className={styles.overline}>Questions</p><h2>Before you join.</h2></div>
+          <div>
+            {questions.map(({ question, answer }) => (
+              <details key={question} className={styles.faqItem}>
+                <summary>{question}<Plus size={19} aria-hidden="true" /></summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.finalCall}>
+        <div className={styles.wrap}>
+          <div><p className={styles.overline}>{INTERESTS.masterclass}</p><h2>Ready to speak up?</h2></div>
+          <Link href={registerHref()} className={`${styles.button} ${styles.acid}`}>Register for the masterclass</Link>
+        </div>
+      </section>
+    </main>
   );
 }

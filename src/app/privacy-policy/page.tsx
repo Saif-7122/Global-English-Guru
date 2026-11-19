@@ -1,6 +1,4 @@
 import { SITE } from "@/data/site";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata = {
@@ -10,8 +8,7 @@ export const metadata = {
 export default function PrivacyPolicy() {
   return (
     <>
-      <Navbar />
-      <main className="pt-24 pb-16 min-h-screen bg-slate-50">
+      <main id="site-content" className="py-16 min-h-screen bg-slate-50">
         <div className="container-xl">
           <SectionHeading
             title="Privacy Policy"
@@ -32,6 +29,9 @@ export default function PrivacyPolicy() {
             <p className="text-slate-600 mb-6 leading-relaxed">
               We use the information we collect to provide, maintain, and improve our courses, and to communicate with you about upcoming batches and educational materials.
             </p>
+            <p className="text-slate-600 mb-6 leading-relaxed">
+              For masterclass registrations and online course inquiries, we store your name, email address, phone number, programme of interest, and contact consent in Google Sheets. We use that information to send your confirmation and let our outreach team follow up about your chosen programme.
+            </p>
 
             <h3 className="text-xl font-bold text-slate-900 mb-4">3. Consent for Recordings</h3>
             <p className="text-slate-600 mb-6 leading-relaxed">
@@ -45,7 +45,6 @@ export default function PrivacyPolicy() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

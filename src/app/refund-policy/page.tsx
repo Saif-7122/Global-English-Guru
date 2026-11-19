@@ -1,5 +1,3 @@
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata = {
@@ -9,8 +7,7 @@ export const metadata = {
 export default function RefundPolicy() {
   return (
     <>
-      <Navbar />
-      <main className="pt-24 pb-16 min-h-screen bg-slate-50">
+      <main id="site-content" className="py-16 min-h-screen bg-slate-50">
         <div className="container-xl">
           <SectionHeading
             title="Refund and Cancellation Policy"
@@ -34,7 +31,6 @@ export default function RefundPolicy() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

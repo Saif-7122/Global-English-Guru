@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import { SiteFooter, SiteHeader } from "@/components/launch/SiteChrome";
+import launchStyles from "@/components/launch/launch.module.css";
 import { SITE } from "@/data/site";
 
 /* ── Google Fonts ─────────────────────────────────────────── */
@@ -46,9 +48,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: SITE.ogImage,
-        width: 1200,
-        height: 630,
-        alt: `${SITE.name} — Online Communication Courses`,
+        width: 612,
+        height: 644,
+        alt: "Sajid Ahmed speaking at an event",
       },
     ],
   },
@@ -60,9 +62,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: SITE.url,
   },
 };
 
@@ -79,7 +78,6 @@ const structuredData = {
     "@type": "PostalAddress",
     streetAddress: SITE.address,
   },
-  sameAs: [SITE.instagram, SITE.youtube],
 };
 
 /* ── Root Layout ──────────────────────────────────────────── */
@@ -122,7 +120,13 @@ export default function RootLayout({
         [META_PIXEL_CODE_HERE]
         ───────────────────────────────────────────────────── */}
       </head>
-      <body style={{ fontFamily: "var(--font-sans)" }}>{children}</body>
+      <body style={{ fontFamily: "var(--font-sans)" }}>
+        <div className={launchStyles.site}>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </div>
+      </body>
     </html>
   );
 }
