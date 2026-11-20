@@ -16,9 +16,6 @@ export default function PrivacyPolicy() {
             centered={false}
           />
           <div className="max-w-3xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-100 prose prose-slate">
-            <div className="bg-amber-50 border border-amber-200 text-amber-800 px-4 py-3 rounded-lg mb-8 text-sm font-medium">
-              Note: This is a placeholder policy document. Final legal terms will be updated shortly by legal counsel.
-            </div>
             
             <h3 className="text-xl font-bold text-slate-900 mb-4">1. Information Collection</h3>
             <p className="text-slate-600 mb-6 leading-relaxed">

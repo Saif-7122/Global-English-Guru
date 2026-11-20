@@ -26,7 +26,7 @@ export default async function ThankYouPage({
       <h1 id="registration-title">{isMasterclass ? "Thank you for registering!" : "Thanks for your interest!"}</h1>
       <p className={styles.description}>
         {emailPending
-          ? "We received your details. Your confirmation email is queued and may take a little longer to arrive."
+          ? "We received your details. Your confirmation email may take a little longer to arrive."
           : "We received your details. Check your inbox for the confirmation email, or your spam folder if it takes a while."}
       </p>
       <p className={styles.description}>
