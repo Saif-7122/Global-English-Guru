@@ -1,4 +1,13 @@
-const blues = ["#9bb8ff", "#afc9ff", "#d2e1ff", "#ffffff", "#e5edff", "#ffffff"];
+const letters = {
+  S: ["11111", "10000", "10000", "11111", "00001", "00001", "11111"],
+  P: ["11110", "10001", "10001", "11110", "10000", "10000", "10000"],
+  E: ["11111", "10000", "10000", "11110", "10000", "10000", "11111"],
+  A: ["01110", "10001", "10001", "11111", "10001", "10001", "10001"],
+  K: ["10001", "10010", "10100", "11000", "10100", "10010", "10001"],
+  U: ["10001", "10001", "10001", "10001", "10001", "10001", "01110"],
+};
+
+const blues = ["#1245ba", "#1c5cff", "#3471ff", "#5893ff", "#90bbff", "#d9eaff"];
 const green = "#8bff8d";
 const fieldWidth = 62;
 const fieldHeight = 37;
@@ -8,16 +17,34 @@ function seed(x: number, y: number) {
 }
 
 function makePixels() {
+  const ink = new Set<number>();
+  const words: { text: (keyof typeof letters)[]; startX: number; startY: number }[] = [
+    { text: ["S", "P", "E", "A", "K"], startX: 2, startY: 3 },
+    { text: ["U", "P"], startX: 19, startY: 20 },
+  ];
+  for (const { text, startX, startY } of words) {
+    text.forEach((letter, index) => {
+      letters[letter].forEach((row, y) => {
+        row.split("").forEach((cell, x) => {
+          if (cell === "0") return;
+          for (let dy = 0; dy < 2; dy += 1) {
+            for (let dx = 0; dx < 2; dx += 1) {
+              ink.add((startY + y * 2 + dy) * fieldWidth + startX + index * 12 + x * 2 + dx);
+            }
+          }
+        });
+      });
+    });
+  }
+
   return Array.from({ length: fieldWidth * fieldHeight }, (_, index) => {
     const x = index % fieldWidth;
     const y = Math.floor(index / fieldWidth);
-    const envelope = Math.sin(Math.PI * x / (fieldWidth - 1)) ** 0.7;
-    const amplitude = 1 + envelope * (1 + Math.abs(Math.sin(x * 0.37) * Math.cos(x * 0.11)) * 15);
-    const solid = Math.abs(y - fieldHeight / 2) <= amplitude;
+    const solid = ink.has(index);
     return {
       x, y, solid, grain: seed(x, y), lift: 0, velocity: 0,
     };
-  }).filter(({ solid, grain }) => solid);
+  }).filter(({ solid, grain }) => solid || grain > 0.72);
 }
 
 export function mountPixelField(canvas: HTMLCanvasElement, surface: HTMLElement) {
@@ -45,7 +72,7 @@ export function mountPixelField(canvas: HTMLCanvasElement, surface: HTMLElement)
     const delta = previousTime ? Math.min(2, (time - previousTime) / 16.667) : 1;
     previousTime = time;
     const wave = (time - pulseStarted) * 0.62;
-    const size = Math.min(width / 62, height / 35);
+    const size = Math.min(width / 67, height / 45);
     const originX = (width - fieldWidth * size) / 2;
     const originY = (height - fieldHeight * size * 0.82) / 2;
     const radius = Math.max(44, size * 10);
@@ -54,7 +81,7 @@ export function mountPixelField(canvas: HTMLCanvasElement, surface: HTMLElement)
 
     for (const pixel of pixels) {
       const x = originX + pixel.x * size + (pixel.y - 18) * size * 0.095;
-      const y = originY + pixel.y * size * 0.82;
+      const y = originY + pixel.y * size * 0.82 - (pixel.x - 31) * size * 0.10;
       let force = 0;
       if (!motion.matches) {
         if (pointer) force = Math.max(0, 1 - Math.hypot(x - pointer.x, y - pointer.y) / radius);
